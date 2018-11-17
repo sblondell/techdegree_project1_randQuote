@@ -20,52 +20,52 @@ var quotes = [
   {
     quote : 'Always do right. This will gratify some people and astonish the rest.',
     source : 'Mark Twain',
-    country : 'America'
+    citation : "Note to the Young People's Society, Greenpoint Presbyterian Church, 1901"
   },
   {
     quote : 'If you are going through hell, keep going.',
     source : 'Winston Churchill',
-    country : 'England'
+    citation : ''
   },
   {
     quote : 'Sometimes the road less traveled is less traveled for a reason',
     source : 'Jerry Seinfeld',
-    country : 'America'
+    citation : ''
   },
   {
     quote : 'Just remember, once you\'re over the hill you begin to pick up speed.',
     source : 'Arthur Schopenhauer',
-    country : 'Germany'
+    citation : ''
   },
   {
     quote : 'All my life, I always wanted to be somebody. Now I see that I should have been more specific.',
     source : 'Jane Wagner',
-    country : 'America'
+    citation : ''
   },
   {
     quote : 'Friendship is born at that moment when one person says to another: What! You too? I thought I was the only one.',
     source : 'C.S. Lewis',
-    country : 'Britain'
+    citation : ''
   },
   {
     quote : 'Your work is to discover your world and then with all your heart give yourself to it.',
     source : 'Buddha',
-    country : 'India'
+    citation : ''
   },
   {
     quote : 'True friends are families which you can select.',
     source : 'Audrey Hepburn',
-    country : 'America'
+    citation : ''
   },
   {
     quote : 'The more I give to thee, the more I have, for both are infinite.',
     source : 'William Shakespeare',
-    country : 'England'
+    citation : ''
   },
   {
     quote : 'I used to think anyone doing anything weird was weird. Now I know that it is the people that call others weird that are weird.',
     source : 'Paul McCartney',
-    country : 'England'
+    citation : ''
   }
 ];
 
@@ -105,7 +105,11 @@ function printQuote(){
   var html = '';
 
   html += "<p class='quote'>" + randQuote.quote + '</p>';
-  html += "<p class='source'>" + randQuote.source + "</p>";
+  html += "<p class='source'>" + randQuote.source;
+  if (randQuote.citation){
+    html += "<span class=citation>" + randQuote.citation + "</span>";
+  }
+  html += '</p>';
 
   outputDiv.innerHTML = html;
 }
@@ -122,4 +126,3 @@ function printQuote(){
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
 
-// Remember to delete the comments that came with this file, and replace them with your own code comments.
