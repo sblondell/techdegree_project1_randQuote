@@ -2,6 +2,9 @@
 /* November 16, 2018                             */
 
 
+var intervalId = setInterval(printQuote, 7000); //A global variable in charge of keeping track of auto-refreshing
+
+
 /*
 An array to hold all available quote objects for the assignment.
 */
@@ -19,7 +22,7 @@ var quotes = [
     year : ''
   },
   {
-    quote : 'Sometimes the road less traveled is less traveled for a reason',
+    quote : 'Sometimes the road less traveled is less traveled for a reason.',
     source : 'Jerry Seinfeld',
     citation : '',
     year : ''
@@ -91,16 +94,22 @@ function printQuote(){
   var outputDiv = document.getElementById('quote-box');
   var html = '';
 
+  clearInterval(intervalId);//Clear the previous auto-refresh timer. This prevents multiple refreshes from piling up
+  intervalId = setInterval(printQuote, 7000); //Resets the global auto-refresh timer
+
   html += "<p class='quote'>" + randQuote.quote + '</p>';
   html += "<p class='source'>" + randQuote.source;
+
+//Conditionals...
   if (randQuote.citation){
     html += "<span class='citation'>" + randQuote.citation + "</span>";
   }
   if (randQuote.year){
     html += "<span class='citation'>" + randQuote.year + "</span>";
   }
+//----------------------
+  
   html += '</p>';
-
   outputDiv.innerHTML = html; //Pass the html code to the DOM
   document.body.style.background = getRandomColor(); //Change the webpage background to a random color
 }
