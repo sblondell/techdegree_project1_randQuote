@@ -9,7 +9,7 @@ var quotes = [
   {
     quote : 'Always do right. This will gratify some people and astonish the rest.',
     source : 'Mark Twain',
-    citation : "Note to the Young People's Society, Greenpoint Presbyterian Church",
+    citation : 'Note to the Young People\'s Society, Greenpoint Presbyterian Church',
     year : '1901'
   },
   {
@@ -39,8 +39,8 @@ var quotes = [
   {
     quote : 'Friendship is born at that moment when one person says to another: What! You too? I thought I was the only one.',
     source : 'C.S. Lewis',
-    citation : '',
-    year : ''
+    citation : 'The Four Loves',
+    year : '1960'
   },
   {
     quote : 'Your work is to discover your world and then with all your heart give yourself to it.',
@@ -72,7 +72,6 @@ var quotes = [
 /*
 A function that takes an array and returns a random object from that array.
 */
-
 function getRandomQuote(array){
   var randNum = 0;
 
@@ -82,13 +81,11 @@ function getRandomQuote(array){
 }
 
 
-
 /*
 A function that takes a random object from an array and generates the appropriate
 html string (a combination of the object's properties and html tags) to be shown
 by the web browser.
 */
-
 function printQuote(){
   var randQuote = getRandomQuote(quotes);
   var outputDiv = document.getElementById('quote-box');
@@ -104,9 +101,23 @@ function printQuote(){
   }
   html += '</p>';
 
-  outputDiv.innerHTML = html;
+  outputDiv.innerHTML = html; //Pass the html code to the DOM
+  document.body.style.background = getRandomColor(); //Change the webpage background to a random color
+}
+
+
+/*
+A random hex color value generator.
+*/
+function getRandomColor(){
+  var randColor = '#';
+  var hexString = '0123456789ABCDEF';
+
+  for (var i = 0; i < 6; i++){
+    randColor += hexString[Math.floor(Math.random() * hexString.length)];
+  }
+  return randColor;
 }
 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
-
 
