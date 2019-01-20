@@ -3,7 +3,7 @@
 /*                                               */
 /* Using HTML5, CSS, and Javascript to create a  */
 /* webpage that randomly displays the contents   */
-/* of an array on a page.
+/* of an array on a page.                        */
 
 #Extra Credit
 1. Add more properties to the quote objects
@@ -15,7 +15,7 @@
   on line 114.
 
 3. Auto-refresh the quote
-  A global variable (line 5) is used to keep track of page refreshing.
+  A global variable (line 8) is used to keep track of page refreshing.
   Everytime the quote is manually refreshed, the global timer is reset(line 97,98).
   This prevented multiple calls to 'setInterval()' from piling up and
   executing.

@@ -1,9 +1,11 @@
 /* techdegree project 1 - Random Quote Generator */
 /* November 16, 2018                             */
-
+/*                                               */
+/* Using HTML5, CSS, and Javascript to create a  */
+/* webpage that randomly displays the contents   */
+/* of an array on a page.                        */
 
 var intervalId = setInterval(printQuote, 7000); //A global variable in charge of keeping track of auto-refreshing
-
 
 /*
 An array to hold all available quote objects for the assignment.
