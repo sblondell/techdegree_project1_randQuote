@@ -11,11 +11,11 @@
   I was able to find citation and year data for two of the objects.
 
 2. Random background color
-  I added a random color(hex) generator (line 121) and it is used 
-  on line 114.
+  I added a random color(hex) generator (line 123) and it is used 
+  on line 116.
 
 3. Auto-refresh the quote
   A global variable (line 8) is used to keep track of page refreshing.
-  Everytime the quote is manually refreshed, the global timer is reset(line 97,98).
+  Everytime the quote is manually refreshed, the global timer is reset(line 99,100).
   This prevented multiple calls to 'setInterval()' from piling up and
   executing.
