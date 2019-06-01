@@ -1,3 +1,4 @@
+```
 /* techdegree project 1 - Random Quote Generator */
 /* November 16, 2018                             */
 /*                                               */
@@ -19,3 +20,4 @@
   Everytime the quote is manually refreshed, the global timer is reset(line 99,100).
   This prevented multiple calls to 'setInterval()' from piling up and
   executing.
+```
